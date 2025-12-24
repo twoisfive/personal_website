@@ -44,7 +44,7 @@ export default function Carousel() {
     return(
         <>
             
-            <div className="relative flex items-center justify-center h-[400px]">
+            <div className="relative flex items-center justify-center h-[200px] md:h-[400px] min-w-0 overflow-hidden">
                 <button className="absolute right-0 z-10"
                 onClick={() => setCurrent(c => c + 1)}>→</button> 
                 <button className="absolute left-0 z-10"
@@ -56,7 +56,7 @@ export default function Carousel() {
                     variants={variants}
                     animate={role}
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                    className="absolute w-[300px] aspect-[4/5] "
+                    className="absolute w-[150px] md:w-[300px] aspect-[4/5]"
                     >
                         <img src={images[index]} className="w-full h-full object-cover rounded-xl shadow-lg"/>
                     </motion.div>

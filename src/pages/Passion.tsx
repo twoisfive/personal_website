@@ -6,10 +6,10 @@ import Carousel from "../components/Carousel"
 
 const Passion = forwardRef<HTMLElement>((props, ref) => {
     return(
-        <section ref={ref} className="bg-black pt-40 pb-40 px-60">
+        <section ref={ref} className="bg-black pt-20 pb-30 md:py-40 px-10 md:px-60">
             <h1 className="text-center hero-text text-5xl">My Interests</h1>
             <div className="mt-20 flex flex-col gap-20">
-                <div className="flex flex-row justify-between">
+                <div className="flex flex-row justify-between min-w-0">
                     <div>
                         <h2 className="sub-heading">check out my <span className="italic">YOUTUBE!</span></h2>
                         <p>You already saw some of my stuff earlier, click on the icon to go to my page!</p>
@@ -20,7 +20,7 @@ const Passion = forwardRef<HTMLElement>((props, ref) => {
                         </a>
                     </div>
                 </div>
-                <div className="grid grid-cols-[3fr_2fr]">
+                <div className="md:grid md:grid-cols-[3fr_2fr]">
                     <div className="pr-20">
                         <img src={animation} />
                     </div>

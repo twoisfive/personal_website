@@ -1,13 +1,11 @@
-import Navbar from "./Navbar.tsx"
 import { motion, useSpring , useTransform, MotionValue } from "motion/react"
 import { } from "react"
 
 interface HeroProps {
   scrollY: MotionValue<number>; // <- type your prop
-  scrollToSection: (section: "about" | "interests") => void
 }
 
-export default function Hero({ scrollY, scrollToSection }: HeroProps) {
+export default function Hero({ scrollY }: HeroProps) {
     const start = 100 
     const end = 600
 
@@ -20,40 +18,36 @@ export default function Hero({ scrollY, scrollToSection }: HeroProps) {
     return(
         <section className="relative bg-[url('/src/assets/forest-bg.jpg')] bg-cover bg-center
         after:content-[''] after:absolute after:inset-0 after:bg-zinc-950/90">
-            <motion.div style={{ y }} className="relative z-10 p-10 rounded-b-xl">
-                <Navbar onNavigate={scrollToSection} />
-                <div className="grid grid-cols-2 w-full pt-5">
+            <div  className="relative z-10 p-10 rounded-b-xl">
+                
+                <div className="h-8 md:h-10" />
+                <motion.div style={{ y }} className="xl:grid xl:grid-cols-2 w-full pt-5">
                     <motion.h1 initial={{ opacity: 0 }} animate={{ opacity: 1 }}  transition={{ duration: 2 }}  
-                    className="font-bold text-7xl hero-text">
+                    className="font-bold text-4xl text-center md:text-start md:text-6xl lg:text-7xl hero-text max-lg:mb-5">
                         HI THERE ! MY NAME IS FAAIZ
                     </motion.h1>
-                    <div className="flex flex-row justify-center gap-5">
+                    <div className="flex flex-row justify-center md:max-lg:justify-start gap-5 max-lg:mb-5">
                         <iframe
-                            className="rounded-md"
-                            width="225"
-                            height="400"
+                            className="rounded-md w-56 h-100"
                             src="https://www.youtube.com/embed/L-K_fFnd8VA?autoplay=1&mute=1&playsinline=1"
                             allow="autoplay; encrypted-media"
                         >
                         </iframe>
                         <iframe
-                            className="rounded-md"
-                            width="225"
-                            height="400"
+                            className="rounded-md w-56 h-100 max-sm:fixed max-sm:hidden"
                             src="https://www.youtube.com/embed/bSmr0Kq5nc0?autoplay=1&mute=1&playsinline=1"
                             allow="autoplay; encrypted-media"
                         >
                         </iframe>              
                     </div>
-                    <p className="text-xl pt-4">{shortDesc}</p>
+                    <p className="text-xl pt-4 max-md:text-center">{shortDesc}</p>
                     <div className="text-right  pt-4 pr-20">
                         <a href="https://www.youtube.com/@faaizDhewanto" target="_blank"
-                        className="text-xl">check out more --{'>'}</a>
-                        <p className="text-md mt-8">scroll down</p>
+                        className="text-xl max-lg: hidden">check out more --{'>'}</a>
+                        <p className="text-md mt-8 max-md:hidden">scroll down</p>
                     </div>
-                </div>
-
-            </motion.div>
+                </motion.div>
+            </div>
         </section>
     )
 }

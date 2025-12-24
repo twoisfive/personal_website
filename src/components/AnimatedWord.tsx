@@ -13,7 +13,7 @@ export default function AnimatedWord({ word, scrollYProgress, start, end }: Prop
 
   return (
     <motion.span
-      className="text-4xl leading-[1.4] inline-block mr-4"
+      className="text-xl md:text-4xl leading-[1.4] inline-block mr-4"
       style={{ opacity: progress }}
     >
       {word}

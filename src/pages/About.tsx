@@ -22,18 +22,17 @@ I'll pick you up. Looking sharp.`
 
     return(
         <section ref={ref}   className="
-            flex justify-center pt-40 pb-40
-            pt-40px
+            flex justify-center py-20 md:pt-40 md:pb-40
             w-full
-            bg-[url('/src/assets/texture_dark.png')] bg-cover bg-center
+            bg-[url('/src/assets/texture_dark.png')] bg-cover bg-center min-w-0
         "
         >
-            <div className="grid grid-cols-2 justify-center w-4/5">
-                <div className="w-3/5 top-20 h-fit">
-                    <img  src={pic} className="w-full rounded-xl " ></img>
+            <div className="flex flex-col md:grid md:grid-cols-2 justify-center w-4/5 min-w-0">
+                <div className="w-3/5 h-fit min-w-0">
+                    <img  src={pic} className="w-full rounded-xl" ></img>
                     <h2 className="text-end text-4xl font-bold mt-10">ABOUT ME</h2>
                 </div>
-                <div ref={textRef}>
+                <div className="max-md:mt-10" ref={textRef}>
                     {words.map((word: string, i: number) =>(
                         <AnimatedWord
                             key={i}

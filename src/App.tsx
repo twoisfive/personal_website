@@ -6,6 +6,7 @@ import Hero from "./pages/Hero"
 import About from "./pages/About"
 import Footer from './pages/Footer'
 import Passion from "./pages/Passion"
+import Navbar from './pages/Navbar'
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
   
   return (
     <>
+      <Navbar onNavigate={scrollToSection}/>
       <Hero scrollY={scrollY} scrollToSection={scrollToSection} />
       <About ref={aboutRef}/>
       <Passion ref={interestsRef}/>
