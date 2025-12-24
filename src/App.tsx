@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react'
-import { useMotionValue, MotionValue } from 'motion/react'
+import { useMotionValue } from 'motion/react'
 import './App.css'
-import Lenis from "@studio-freight/lenis"
+import Lenis from 'lenis'
 import Hero from "./pages/Hero"
 import About from "./pages/About"
 import Footer from './pages/Footer'
@@ -49,7 +49,7 @@ function App() {
   return (
     <>
       <Navbar onNavigate={scrollToSection}/>
-      <Hero scrollY={scrollY} scrollToSection={scrollToSection} />
+      <Hero scrollY={scrollY} />
       <About ref={aboutRef}/>
       <Passion ref={interestsRef}/>
       <Footer />

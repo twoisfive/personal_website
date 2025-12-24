@@ -4,7 +4,7 @@ import pp from "/src/assets/faaiz_pp.png"
 import animation from "/src/assets/kasep_animation.gif"
 import Carousel from "../components/Carousel"
 
-const Passion = forwardRef<HTMLElement>((props, ref) => {
+const Passion = forwardRef<HTMLElement>(({}, ref) => {
     return(
         <section ref={ref} className="bg-black pt-20 pb-30 md:py-40 px-10 md:px-60">
             <h1 className="text-center hero-text text-5xl">My Interests</h1>

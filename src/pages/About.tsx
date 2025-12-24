@@ -4,7 +4,7 @@ import { useRef, forwardRef } from "react"
 import AnimatedWord from "../components/AnimatedWord";
 
 
-const About = forwardRef<HTMLElement>((props, ref) => {
+const About = forwardRef<HTMLElement>(({}, ref) => {
     const textRef = useRef<HTMLDivElement>(null)
     const { scrollYProgress } = useScroll({
     target: textRef,
