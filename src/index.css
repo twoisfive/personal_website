@@ -5,7 +5,7 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
+  color-scheme: dark;
   color: rgba(255, 255, 255);
   background-color: #242424;
 
@@ -20,11 +20,6 @@ html.lenis,
 html.lenis body {
   height: auto;
 }
-
-.lenis {
-  overflow: hidden;
-}
-
 .lenis-smooth {
   scroll-behavior: auto !important;
 }
@@ -53,14 +48,15 @@ a:hover {
 
 html {
   height: 100%;
-  overflow-x: hidden;
 }
+
 body {
   margin: 0;
   display: flex;
   min-width: 200px;
   min-height: 100vh;
   height: 100%;
+  overflow-y: auto;
 }
 
 button {
