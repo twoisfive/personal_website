@@ -14,6 +14,7 @@ function App() {
 
   const aboutRef = useRef<HTMLElement>(null)
   const interestsRef = useRef<HTMLElement>(null)
+  const heroRef = useRef<HTMLElement>(null)
 
   const scrollY = useMotionValue(0)
   useEffect(() => {
@@ -32,9 +33,10 @@ function App() {
     requestAnimationFrame(raf);
   }, []);
 
-  const scrollToSection = (section: "about" | "interests") => {
+  const scrollToSection = (section: "hero" | "about" | "interests") => {
     
     const target = {
+      hero: heroRef.current,
       about: aboutRef.current,
       interests: interestsRef.current,
     }[section]
@@ -49,7 +51,7 @@ function App() {
   return (
     <>
       <Navbar onNavigate={scrollToSection}/>
-      <Hero scrollY={scrollY} />
+      <Hero ref={heroRef} scrollY={scrollY} />
       <About ref={aboutRef}/>
       <Passion ref={interestsRef}/>
       <Footer />

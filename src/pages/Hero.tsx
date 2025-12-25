@@ -1,11 +1,11 @@
 import { motion, useSpring , useTransform, MotionValue } from "motion/react"
-import { } from "react"
+import { forwardRef } from "react"
 
 interface HeroProps {
-  scrollY: MotionValue<number>; // <- type your prop
+    scrollY: MotionValue<number>; // <- type your prop
 }
 
-export default function Hero({ scrollY }: HeroProps) {
+const Hero = forwardRef<HTMLElement, HeroProps>(({scrollY}, ref) => {
     const start = 100 
     const end = 600
 
@@ -16,7 +16,7 @@ export default function Hero({ scrollY }: HeroProps) {
                         in whatever feels right at the moment. I like drawing, making vids,
                         and recently programming's been real fun too`
     return(
-        <section className="relative bg-[url('/src/assets/forest-bg.jpg')] bg-cover bg-center
+        <section ref={ref} className="relative bg-[url('/src/assets/forest-bg.jpg')] bg-cover bg-center
         after:content-[''] after:absolute after:inset-0 after:bg-zinc-950/90">
             <div  className="relative z-10 p-10 rounded-b-xl">
                 
@@ -50,4 +50,6 @@ export default function Hero({ scrollY }: HeroProps) {
             </div>
         </section>
     )
-}
+})
+
+export default Hero

@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 interface NavProps {
-  onNavigate: (section: "about" | "interests") => void
+  onNavigate: (section: "hero" | "about" | "interests") => void
 }
 
 export default function Navbar( { onNavigate }: NavProps) {
@@ -19,7 +19,7 @@ export default function Navbar( { onNavigate }: NavProps) {
         <>
             <button className="fixed top-4 right-4 md:hidden z-20" onClick={flipNav}>III</button>
             <div className={navStyle}>
-                <button onClick={() => onNavigate("about")} 
+                <button onClick={() => onNavigate("hero")} 
                     className="text-md md:text-xl">Twoisfive</button>
                 <div className="flex flex-col md:flex-row md:gap-5">
                     <button onClick={() => onNavigate("about")} 
